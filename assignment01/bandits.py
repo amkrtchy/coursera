@@ -1,12 +1,13 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from tqdm import tqdm
 import time
 
-from ..rlglue.rl_glue import RLGlue
-import ..agents/main_agent
-import ..environments/ten_arm_env
-import ..environments/test_env
+import matplotlib.pyplot as plt
+import numpy as np
+from tqdm import tqdm
+
+from rl_glue.rl_glue import RLGlue
+### from ..agents import main_agent
+### from ..environments import ten_arm_env
+### from ..environments import test_env
 
 plt.ion()
 
