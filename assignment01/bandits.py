@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import time
 
-from rlglue.rl_glue import RLGlue
-import main_agent
-import ten_arm_env
-import test_env
+from ..rlglue.rl_glue import RLGlue
+import ..agents/main_agent
+import ..environments/ten_arm_env
+import ..environments/test_env
 
 plt.ion()
 
