@@ -2,7 +2,6 @@ import time
 
 import matplotlib.pyplot as plt
 import numpy as np
-from tqdm import tqdm
 
 from rl_glue.rl_glue import RLGlue
 from agents import main_agent
@@ -122,12 +121,12 @@ def evaluate_agent(agent):
 
     rewards = np.zeros((num_runs, num_steps))
     average_best = 0
-    for run in range(num_runs):           # tqdm is what creates the progress bar below
+    for run in range(num_runs):          
         np.random.seed(run)
         
-        rl_glue = RLGlue(env, agent)          # Creates a new RLGlue experiment with the env and agent we chose above
-        rl_glue.rl_init(agent_info, env_info) # We pass RLGlue what it needs to initialize the agent and environment
-        rl_glue.rl_start()                    # We start the experiment
+        rl_glue = RLGlue(env, agent)          
+        rl_glue.rl_init(agent_info, env_info) 
+        rl_glue.rl_start()                    
 
         average_best += np.max(rl_glue.environment.arms)
         
@@ -145,8 +144,8 @@ def evaluate_agent(agent):
     plt.title(f"Average Reward of {agent.__name__}")
     plt.xlabel("Steps")
     plt.ylabel("Average reward")
-    plt.draw()
-    plt.pause(0.1)
+    plt.show()
+    plt.pause(2)
 
 if __name__ == "__main__":
    evaluate_agent(GreedyAgent)

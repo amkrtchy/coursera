@@ -18,12 +18,6 @@ class Agent(BaseAgent):
     def agent_init(self, agent_info={}):
         """Setup for the agent called when the experiment first starts."""
 
-        # if "actions" in agent_info:
-        #     self.num_actions = agent_info["actions"]
-
-        # if "state_array" in agent_info:
-        #     self.q_values = agent_info["state_array"]
-
         self.num_actions = agent_info.get("num_actions", 2)
         self.initial_value = agent_info.get("initial_value", 0.0)
         self.q_values = np.ones(agent_info.get("num_actions", 2)) * self.initial_value
